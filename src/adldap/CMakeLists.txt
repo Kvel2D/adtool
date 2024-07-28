@@ -105,9 +105,9 @@ add_custom_target(adldap_ts
     COMMAND ${Qt5_LUPDATE_EXECUTABLE} -recursive ${CMAKE_CURRENT_SOURCE_DIR} -ts ${TS_FILES} -noobsolete
 )
 
-if(NOT ADMC_BUILD_DEB)
+if(BUILD_TESTING)
     target_compile_definitions(adldap PRIVATE SMB_HAS_NEW_NDR_PULL_STEAL_SWITCH=1)
-endif(NOT ADMC_BUILD_DEB)
+endif(BUILD_TESTING)
 
 # Generate translation binaries (.qm) from sources (.ts)
 set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION ${CMAKE_CURRENT_SOURCE_DIR})

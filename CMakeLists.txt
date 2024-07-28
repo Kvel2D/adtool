@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -52,9 +52,9 @@ include(ClangFormat)
 option(ADMC_BUILD_DEB "Build the deb package of ADMC." OFF)
 
 add_subdirectory(src)
-if(NOT ADMC_BUILD_DEB)
+if(BUILD_TESTING)
     add_subdirectory(tests)
-endif(NOT ADMC_BUILD_DEB)
+endif(BUILD_TESTING)
 add_subdirectory(share)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/CHANGELOG.txt
@@ -64,10 +64,12 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/CHANGELOG_ru.txt
 
 if (ADMC_BUILD_DEB)
     SET(CPACK_GENERATOR "DEB")
-    SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Kees van Vloten")
+    SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Kees van Vloten <keesvanvloten@gmail.com>")
     SET(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
     SET(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-    SET(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Samba domain management console.")
+    SET(CPACK_DEBIAN_PACKAGE_DESCRIPTION "The ADMC is an integrated complex tool that implements
+ User and Computers and Group Policy Manager modules of
+ Microsoft Remote Server Administration Tools (RSAT).")
     SET(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/altlinux/admc")
     set(CPACK_STRIP_FILES "${CMAKE_INSTALL_LIBDIR}/libadldap.so;${CMAKE_INSTALL_BINDIR}/admc")
     INCLUDE(CPack)

@@ -1,3 +1,10 @@
+admc (0.16.3) UNRELEASED; urgency=medium
+
+  * Fix crashes after OU/user creation attempts by users with corresponding
+    delegated rights.
+
+ -- Semyon Knyazev <samael@altlinux.org>  Wed, 15 May 2024 00:00:00 +0000
+
 admc (0.5.2) UNRELEASED; urgency=medium
 
   * Initial release.

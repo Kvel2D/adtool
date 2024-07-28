@@ -4,3 +4,9 @@ output/
 *.qm
 src/adldap/samba/ndr_misc.c
 src/adldap/samba/ndr_misc.h
+/debian/admc.substvars
+/debian/debhelper-build-stamp
+/debian/files
+/debian/admc/
+/debian/.debhelper/
+/obj-*/
