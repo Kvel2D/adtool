@@ -8,6 +8,7 @@ Build-Depends: debhelper-compat (= 11), debhelper (>= 11), cmake, qtbase5-dev, l
 Homepage: https://github.com/altlinux/admc
 Vcs-Browser: https://github.com/altlinux/admc
 Vcs-Git: https://github.com/altlinux/admc.git
+Bugs: https://github.com/altlinux/admc/issues
 
 Package: admc
 Architecture: any
